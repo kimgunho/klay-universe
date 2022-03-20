@@ -1,0 +1,39 @@
+@import '../../common.scss';
+
+.section{
+    @include section;
+    position: relative;
+    background-color: #000;
+
+    >.limiter{
+        @include limiter;
+        position: relative;
+        z-index: 5;
+
+        >h2{
+            color:#fff;
+            font-size: 3rem;
+            text-align: center;
+            font-weight: 500;
+            line-height: 2;
+            padding-bottom: 1rem;
+        }
+
+        >.video{
+            width: 100%;
+            height: 60vh;
+        }
+    }
+
+    >.background{
+        background-image: url('../../assets/images/s02/background.png');
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        left:0;
+        top:0;
+        width: 100%;
+        height: 100%;
+    }
+}
