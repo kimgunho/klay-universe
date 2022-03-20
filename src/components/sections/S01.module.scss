@@ -5,6 +5,102 @@
     position: relative;
     background-color: #000;
 
+    >.wallet{
+        >a{
+            cursor: pointer;
+            position: absolute;
+            right:10%;
+            top:10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: fit-content;
+            z-index: 5;
+    
+            &:hover{
+                >p{
+                    opacity: 1;
+                }
+                >.background{
+                    background-image: $main_gradientColor;
+                    border:0;
+    
+                    >.icon{
+                        width: 60%;
+                        height: 60%;
+                        background-image: url('../../assets/images/s01/wallet_black.png');                    
+                    }
+                }
+            }
+    
+            >p{
+                opacity: 0;
+                margin-right: 2rem;
+                color:#212121;
+                background-color: #fff;
+                border-radius: .5rem;
+                font-weight: 600;
+                padding:.5rem 1rem;
+                box-sizing: border-box;
+                font-size: 1.125rem;
+                white-space: nowrap;
+                position: relative;
+    
+                &::after{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    right:-25px;
+                    top:50%;
+                    transform: translate(0,-50%);
+                    border:.7rem solid transparent;
+                    border-left:1rem solid #fff;
+                }
+            }
+            >.background{
+                border:1px solid #fff;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                background-color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                >.icon{
+                    width: 70%;
+                    height: 70%;
+                    background-image: url('../../assets/images/s01/wallet_color.png');
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+    >.dimmed{
+        position: absolute;
+        left:0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(0,0,0, 0.8);        
+    }
+    >.video{
+        position: absolute;
+        left:0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+
+        &::-webkit-media-controls {
+            display:none !important;
+        }        
+    }
     >.title{
         width: 100%;
         max-width: fit-content;
@@ -14,6 +110,8 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;        
+        position: relative;
+        z-index: 5;
         
         >h2{
             font-size: 4.5rem;
