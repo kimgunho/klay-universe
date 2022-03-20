@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 
 import styles from "./S01.module.scss";
+import BorderLink from "../shared/BorderLink";
 
 import mouse_icon from "../../assets/images/s01/mouse_icon.svg";
 import intro_video from "../../assets/videos/KlayUniverse_Promo.mp4";
@@ -28,13 +29,11 @@ const S01 = () => {
           <br />
           <span>On Klaytn Blockchain.</span>
         </h2>
-        <a
-          href="https://discord.com/invite/fveVY8YMhX"
-          target={"_blank"}
-          rel="noreferrer"
-        >
-          Join Discord
-        </a>
+
+        <BorderLink
+          title="Join Discord"
+          link={"https://discord.com/invite/fveVY8YMhX"}
+        />
       </div>
 
       <p className={cx("mouse")}>

@@ -17,12 +17,12 @@ $main_gradientColor : linear-gradient(90deg, rgba(49,248,171,1) 0%, rgba(57,194,
   flex-direction: column;
 }
 @mixin tablet {
-  @media screen and (min-width: 735px) and (max-width: 1068px) {
+  @media screen and (max-width: 1280px) {
     @content;
   }
 }
 @mixin mobile {
-  @media screen and (max-width: 734px) {
+  @media screen and (max-width: 740px) {
     @content;
   }
 }
