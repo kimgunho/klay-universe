@@ -35,6 +35,11 @@ const S07 = () => {
     slide10,
   ];
 
+  const onClick = (e) => {
+    const image = e.target;
+    image.classList.add(cx("view"));
+  };
+
   return (
     <div className={cx("section")}>
       <div className={cx("limiter")}>
@@ -49,10 +54,11 @@ const S07 = () => {
         className={cx("swiper")}
         spaceBetween={30}
         loop={true}
-        navigation={{
-          nextEl: ".nextBtn",
-          prevEl: ".prevBtn",
-        }}
+        // navigation={{
+        //   nextEl: ".nextBtn",
+        //   prevEl: ".prevBtn",
+        // }}
+        zoom={true}
         slidesPerView={1.5}
         breakpoints={{
           740: {
@@ -67,14 +73,14 @@ const S07 = () => {
         autoplay={{ delay: 2500 }}
       >
         {datas.map((image, index) => (
-          <SwiperSlide className={cx("slide")} key={index}>
+          <SwiperSlide className={cx("slide")} key={index} onClick={onClick}>
             <Model image={image} />
           </SwiperSlide>
         ))}
       </Swiper>
       <BorderLink title={"More View"} link={""} />
-      <div className={cx(["btn", "prev", "prevBtn"])} />
-      <div className={cx(["btn", "next", "nextBtn"])} />
+      {/* <div className={cx(["btn", "prev", "prevBtn"])} />
+      <div className={cx(["btn", "next", "nextBtn"])} /> */}
       <div className={cx("background")} />
     </div>
   );

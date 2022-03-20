@@ -1,4 +1,6 @@
 import classNames from "classnames/bind";
+
+import CursorProvider from "./providers/cursorProvider";
 import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
 import S01 from "./components/sections/S01";
@@ -15,19 +17,22 @@ const cx = classNames.bind(styles);
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <S01 />
-      <S02 />
-      <div className={cx("background")}>
-        <S03 />
-        <S04 />
-        <S05 />
+    <CursorProvider>
+      <div className={cx("App")}>
+        <div className={cx("cursor")} />
+        <Header />
+        <S01 />
+        <S02 />
+        <div className={cx("background")}>
+          <S03 />
+          <S04 />
+          <S05 />
+        </div>
+        <S06 />
+        <S07 />
+        <Footer />
       </div>
-      <S06 />
-      <S07 />
-      <Footer />
-    </div>
+    </CursorProvider>
   );
 }
 

@@ -5,12 +5,14 @@
   padding: 0;
   word-break: keep-all;
   outline: none;
+  cursor: none;
 }
 html {
   overflow-x: hidden;
   font-size: 16px;
   font-family: 'Lato', sans-serif;
   background-color: #000;
+  cursor: none;
 
   // Tablet
   @include tablet {
@@ -21,9 +23,7 @@ html {
     font-size: 12px;
   }
 }
-body{
-  cursor: url('./assets/images/shared/cursor.svg'),auto;
-}
+
 h1,
 h2,
 h3,

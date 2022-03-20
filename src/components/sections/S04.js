@@ -23,17 +23,35 @@ const S04 = () => {
         "COMMUNITY build-up",
         "Compensation plans for UNIVERSE holders",
       ],
+      data_right: false,
       image: Q2_image,
     },
     {
       head: "Q3",
-      data: ["Not Text"],
-      image: Q2_image,
+      data: [
+        "Payments dApp for in-game $KUT transaction",
+        "Support for UNIVERSE owner created P2E systems",
+        "Support for playable 3D NFT character partnerships",
+        "Support for playing GAME on KLAY UNIVERSE",
+        "Collaboration with Famous companies and Celebrities",
+        "Famous brand UNIVERSE is open",
+        "Full support&compensation to builders and creators",
+        "Full support for creations such as animations and webtoons",
+        "$KUT token Release",
+        "$KUT token will list CEX & DEX",
+      ],
+      data_right: [
+        "Based on $KUT voting system and compensation plans for $KUT token holders",
+        "AIRDROPS $KUT for UNIVERSE holders",
+        "Partnership and Collaboration with other KLAYTN projects",
+      ],
+      image: false,
     },
     {
       head: "Q4",
       data: ["Not Text"],
-      image: Q2_image,
+      data_right: false,
+      image: false,
     },
   ];
 
@@ -55,7 +73,7 @@ const S04 = () => {
             ))}
           </ul>
           <ul className={cx("body")}>
-            {datas.map(({ data, image }, index) => (
+            {datas.map(({ data, image, data_right }, index) => (
               <li key={index} className={cx({ active: index === activeIndex })}>
                 <div>
                   <ul>
@@ -63,7 +81,16 @@ const S04 = () => {
                       <li key={index}>{item}</li>
                     ))}
                   </ul>
-                  <img src={image} alt="" />
+                  {image !== false ? <img src={image} alt="" /> : false}
+                  {data_right !== false ? (
+                    <ul>
+                      {data_right.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    false
+                  )}
                 </div>
               </li>
             ))}
