@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import Header from "./components/shared/Header";
+import Footer from "./components/shared/Footer";
 import S01 from "./components/sections/S01";
 import S02 from "./components/sections/S02";
 import S03 from "./components/sections/S03";
@@ -25,6 +26,7 @@ function App() {
       </div>
       <S06 />
       <S07 />
+      <Footer />
     </div>
   );
 }
