@@ -1,0 +1,117 @@
+@import '../../common.scss';
+
+.section{
+    @include section;
+    position: relative;
+
+    >.limiter{
+        @include limiter;
+        position: relative;
+        z-index: 5;
+
+        >h2{
+            color:#fff;
+            font-size: 3rem;
+            text-align: center;
+            font-weight: 500;
+            line-height: 2;
+            padding-bottom: 1rem;
+        }
+
+        >.table{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+
+            >.head{
+                width: 9rem;
+                background-color: #0E0F0F;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: column;
+                border-radius: 1rem 0rem 0rem 1rem;
+
+                >li{
+                  width: 100%;
+                  color:#fff;
+                  padding:1.5rem 0;
+                  text-align: center;
+                  font-size: 2rem;
+                  font-weight: 400;
+                  position: relative;
+
+                  &.active{
+                      color:$main_color;
+
+                      &::before{
+                        content: '';
+                        position: absolute;
+                        left:0;
+                        top:50%;
+                        transform: translate(0,-50%);
+                        width: 3px;
+                        height: 1.875rem;
+                        background-color: $main_color;
+                    }                      
+                  }
+                }
+            }
+            >.body{
+                width: calc(100% - 9rem);
+                background-color: #000;
+                border-radius: 0rem 1rem 1rem 0rem;
+                padding:3rem;
+                box-sizing: border-box;
+                min-height: 500px;
+
+                >li{
+                    display: none;
+
+                    &.active{
+                        display: block;
+                    }
+
+                    >div{
+                        display: flex;
+                        justify-content: space-between;
+
+                        >ul{
+                            >li{
+                                color:#fff;
+                                line-height: 2;
+                                font-size: 1rem;
+
+                                &:hover{
+                                    color:$main_color;
+                                }
+
+                                &::before{
+                                    content: '· ';
+                                }
+                            }
+                        }
+
+                        >img{
+                            width: 100%;
+                            max-width: 18rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    >.background{
+        background-image: url('../../assets/images/shared/grid_background.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        left:0;
+        top:0;
+        width: 100%;
+        height: 100%;
+    }    
+}

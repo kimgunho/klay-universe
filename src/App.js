@@ -3,6 +3,7 @@ import Header from "./components/shared/Header";
 import S01 from "./components/sections/S01";
 import S02 from "./components/sections/S02";
 import S03 from "./components/sections/S03";
+import S04 from "./components/sections/S04";
 
 import styles from "./App.module.scss";
 
@@ -16,6 +17,7 @@ function App() {
       <S02 />
       <div className={cx("background")}>
         <S03 />
+        <S04 />
       </div>
     </div>
   );
