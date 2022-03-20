@@ -158,8 +158,8 @@ const S05 = () => {
             slidesPerView: 5.5,
             spaceBetween: 30,
           },
-          1440: {
-            slidesPerView: 7.5,
+          1400: {
+            slidesPerView: 6.5,
             spaceBetween: 30,
           },
         }}

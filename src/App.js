@@ -5,6 +5,8 @@ import S02 from "./components/sections/S02";
 import S03 from "./components/sections/S03";
 import S04 from "./components/sections/S04";
 import S05 from "./components/sections/S05";
+import S06 from "./components/sections/S06";
+import S07 from "./components/sections/S07";
 
 import styles from "./App.module.scss";
 
@@ -21,6 +23,8 @@ function App() {
         <S04 />
         <S05 />
       </div>
+      <S06 />
+      <S07 />
     </div>
   );
 }

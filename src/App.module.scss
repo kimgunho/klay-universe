@@ -1,2 +1,10 @@
 @import './common.scss';
 
+.background{
+    background-image: url('./assets/images/shared/background.png');
+    background-position: center center;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-color: #050505;
+    background-attachment: fixed;
+}
