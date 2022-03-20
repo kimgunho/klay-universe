@@ -4,6 +4,7 @@ import S01 from "./components/sections/S01";
 import S02 from "./components/sections/S02";
 import S03 from "./components/sections/S03";
 import S04 from "./components/sections/S04";
+import S05 from "./components/sections/S05";
 
 import styles from "./App.module.scss";
 
@@ -18,6 +19,7 @@ function App() {
       <div className={cx("background")}>
         <S03 />
         <S04 />
+        <S05 />
       </div>
     </div>
   );
