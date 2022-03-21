@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import Header from './components/shared/Header';
@@ -15,19 +16,22 @@ import styles from './App.module.scss';
 const cx = classNames.bind(styles);
 
 function App() {
+  const [componentTop, setComponentTop] = useState({});
+
+  console.log(componentTop);
+
   return (
     <div className={cx('App')}>
-      <div className={cx('cursor')} />
-      <Header />
-      <S01 />
-      <S02 />
+      <Header scrollTops={componentTop} />
+      <S01 setTop={setComponentTop} />
+      <S02 setTop={setComponentTop} />
       <div className={cx('background')}>
-        <S03 />
-        <S04 />
-        <S05 />
+        <S03 setTop={setComponentTop} />
+        <S04 setTop={setComponentTop} />
+        <S05 setTop={setComponentTop} />
       </div>
-      <S06 />
-      <S07 />
+      <S06 setTop={setComponentTop} />
+      <S07 setTop={setComponentTop} />
       <Footer />
     </div>
   );

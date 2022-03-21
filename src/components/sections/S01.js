@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './S01.module.scss';
@@ -8,9 +9,18 @@ import intro_video from '../../assets/videos/KlayUniverse_Promo.mp4';
 
 const cx = classNames.bind(styles);
 
-const S01 = () => {
+const S01 = ({ setTop }) => {
+  const sectionRef = useRef();
+
+  useEffect(() => {
+    setTop(prev => ({
+      ...prev,
+      s01: sectionRef.current.offsetTop,
+    }));
+  }, []);
+
   return (
-    <div className={cx('section')}>
+    <div className={cx('section')} ref={sectionRef}>
       <div className={cx('wallet')}>
         <a href="http://naver.com" target={'_blank'} rel="noreferrer">
           <p>Connect Wallet</p>

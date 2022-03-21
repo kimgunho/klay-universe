@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 
@@ -7,7 +8,16 @@ import Q2_image from '../../assets/images/s04/q2_image.png';
 
 const cx = classNames.bind(styles);
 
-const S04 = () => {
+const S04 = ({ setTop }) => {
+  const sectionRef = useRef();
+
+  useEffect(() => {
+    setTop(prev => ({
+      ...prev,
+      s04: sectionRef.current.offsetTop,
+    }));
+  }, []);
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   const datas = [
@@ -56,7 +66,7 @@ const S04 = () => {
   ];
 
   return (
-    <div className={cx('section')}>
+    <div className={cx('section')} ref={sectionRef}>
       <div className={cx('limiter')}>
         <h2>ROAD MAP</h2>
 

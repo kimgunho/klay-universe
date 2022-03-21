@@ -5,14 +5,12 @@
   padding: 0;
   word-break: keep-all;
   outline: none;
-  cursor: none;
 }
 html {
   overflow-x: hidden;
   font-size: 16px;
   font-family: 'Lato', sans-serif;
   background-color: #000;
-  cursor: none;
 
   // Tablet
   @include tablet {
@@ -48,4 +46,3 @@ textarea {
   appearance: none;
   border-radius: 0;
 }
-

@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Autoplay } from 'swiper';
@@ -30,7 +31,16 @@ import icon from '../../assets/images/s05/slide_icon.svg';
 const cx = classNames.bind(styles);
 SwiperCore.use([Navigation, Autoplay]);
 
-const S05 = () => {
+const S05 = ({ setTop }) => {
+  const sectionRef = useRef();
+
+  useEffect(() => {
+    setTop(prev => ({
+      ...prev,
+      s05: sectionRef.current.offsetTop,
+    }));
+  }, []);
+
   const team = [
     {
       name: 'James. Choi',
@@ -130,7 +140,7 @@ const S05 = () => {
   ];
 
   return (
-    <div className={cx('section')}>
+    <div className={cx('section')} ref={sectionRef}>
       <div className={cx('limiter')}>
         <h2>TEAM</h2>
         <p>
@@ -172,30 +182,15 @@ const S05 = () => {
         ))}
       </Swiper>
 
-      <Swiper
-        className={cx('autoSwiper')}
-        loop={true}
-        slidesPerView={'auto'}
-        speed={3000}
-        autoplay={{ delay: 1, disableOnInteraction: false }}
-      >
-        <SwiperSlide className={cx('slide')}>
-          <p>Indulge in what you imagine </p>
-          <img src={icon} alt="" />
-        </SwiperSlide>
-        <SwiperSlide className={cx('slide')}>
-          <p>Indulge in what you imagine </p>
-          <img src={icon} alt="" />
-        </SwiperSlide>
-        <SwiperSlide className={cx('slide')}>
-          <p>Indulge in what you imagine </p>
-          <img src={icon} alt="" />
-        </SwiperSlide>
-        <SwiperSlide className={cx('slide')}>
-          <p>Indulge in what you imagine </p>
-          <img src={icon} alt="" />
-        </SwiperSlide>
-      </Swiper>
+      <div className={cx('autoSwiper')}>
+        {Array.from(Array(20)).map((_, index) => (
+          <div key={index} className={cx('slide')}>
+            <p>Indulge in what you imagine </p>
+            <img src={icon} alt="" />
+          </div>
+        ))}
+      </div>
+
       <div className={cx(['btn', 'prev', 'prevBtn'])} />
       <div className={cx(['btn', 'next', 'nextBtn'])} />
       <div className={cx('background')} />

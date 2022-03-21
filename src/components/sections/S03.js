@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Autoplay } from 'swiper';
@@ -17,7 +18,16 @@ import slide06 from '../../assets/images/s03/slide06.png';
 const cx = classNames.bind(styles);
 SwiperCore.use([Navigation, Autoplay]);
 
-const S03 = () => {
+const S03 = ({ setTop }) => {
+  const sectionRef = useRef();
+
+  useEffect(() => {
+    setTop(prev => ({
+      ...prev,
+      s03: sectionRef.current.offsetTop,
+    }));
+  }, []);
+
   const datas = [
     {
       color: '#BA9DAA',
@@ -46,7 +56,7 @@ const S03 = () => {
   ];
 
   return (
-    <div className={cx('section')}>
+    <div className={cx('section')} ref={sectionRef}>
       <div className={cx('limiter')}>
         <h2>UNIVERSE NFT</h2>
         <p>

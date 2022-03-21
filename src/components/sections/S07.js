@@ -1,6 +1,8 @@
+import { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Autoplay } from 'swiper';
+import { RiCloseLine } from 'react-icons/ri';
 
 import styles from './S07.module.scss';
 import 'swiper/css';
@@ -21,7 +23,21 @@ import slide10 from '../../assets/images/s07/image10.png';
 const cx = classNames.bind(styles);
 SwiperCore.use([Navigation, Autoplay]);
 
-const S07 = () => {
+const S07 = ({ setTop }) => {
+  const sectionRef = useRef();
+  const [imageSrc, setImageSrc] = useState(null);
+
+  useEffect(() => {
+    setTop(prev => ({
+      ...prev,
+      s07: sectionRef.current.offsetTop,
+    }));
+  }, []);
+
+  useEffect(() => {
+    console.log(imageSrc);
+  }, [imageSrc]);
+
   const datas = [
     slide01,
     slide02,
@@ -35,13 +51,12 @@ const S07 = () => {
     slide10,
   ];
 
-  const onClick = e => {
-    const image = e.target;
-    image.classList.add(cx('view'));
+  const handleZoomImage = event => {
+    setImageSrc(event.target.currentSrc);
   };
 
   return (
-    <div className={cx('section')}>
+    <div className={cx('section')} ref={sectionRef}>
       <div className={cx('limiter')}>
         <h2>COMMUNITY</h2>
         <p>
@@ -54,11 +69,6 @@ const S07 = () => {
         className={cx('swiper')}
         spaceBetween={30}
         loop={true}
-        // navigation={{
-        //   nextEl: ".nextBtn",
-        //   prevEl: ".prevBtn",
-        // }}
-        zoom={true}
         slidesPerView={1.5}
         breakpoints={{
           740: {
@@ -73,14 +83,22 @@ const S07 = () => {
         autoplay={{ delay: 2500 }}
       >
         {datas.map((image, index) => (
-          <SwiperSlide className={cx('slide')} key={index} onClick={onClick}>
+          <SwiperSlide className={cx('slide')} key={index} onClick={handleZoomImage}>
             <Model image={image} />
           </SwiperSlide>
         ))}
       </Swiper>
       <BorderLink title={'More View'} link={''} />
-      {/* <div className={cx(["btn", "prev", "prevBtn"])} />
-      <div className={cx(["btn", "next", "nextBtn"])} /> */}
+      {imageSrc === null || imageSrc === undefined ? (
+        false
+      ) : (
+        <div className={cx('modal')}>
+          <p className={cx('hidden')} onClick={() => setImageSrc(null)}>
+            <RiCloseLine />
+          </p>
+          <img src={imageSrc} alt="" />
+        </div>
+      )}
       <div className={cx('background')} />
     </div>
   );

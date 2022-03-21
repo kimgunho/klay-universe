@@ -6,21 +6,33 @@ import logo from '../../assets/images/shared/klayuniverse_white_logo.png';
 
 const cx = classNames.bind(styles);
 
-const Header = () => {
+const Header = ({ scrollTops }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const menus = ['PROMO', 'UNIVERSE', 'ROADMAP', 'TEAM', 'PARTNERS', 'COMMUNITY'];
 
+  const onClick = (index, section) => {
+    setActiveIndex(index);
+    scrollToTop(scrollTops[section]);
+  };
+
+  const scrollToTop = section => {
+    window.scrollTo({
+      top: section,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <header>
       <div className={cx('limiter')}>
-        <h1>
+        <h1 onClick={() => scrollToTop(0)}>
           <img src={logo} alt="klay universe" />
         </h1>
         <ul>
           {menus.map((menu, index) => (
             <li
-              onClick={() => setActiveIndex(index)}
+              onClick={() => onClick(index, `s0${index + 2}`)}
               key={index}
               className={cx({ active: index === activeIndex })}
             >
