@@ -19,18 +19,16 @@
     > p {
       font-size: 1.25rem;
       color: #fff;
-      line-height: 2;
+      line-height: 1.8;
       text-align: center;
     }
   }
 
   > .swiper {
     width: 100%;
-    max-width: 90vw;
     padding: 0 2rem;
     box-sizing: border-box;
-    margin: 4rem 0 4rem auto;
-    cursor: pointer;
+    margin: 4rem 0;
   }
 
   > .modal {

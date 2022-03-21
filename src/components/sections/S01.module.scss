@@ -3,7 +3,9 @@
 .section {
   @include section;
   position: relative;
-  background-color: #000;
+  background-color: #101010;
+  justify-content: center;
+  padding: 0;
 
   > .wallet {
     > a {
@@ -15,7 +17,7 @@
       align-items: center;
       justify-content: space-between;
       width: fit-content;
-      z-index: 5;
+      z-index: 50;
 
       &:hover {
         > p {

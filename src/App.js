@@ -18,8 +18,6 @@ const cx = classNames.bind(styles);
 function App() {
   const [componentTop, setComponentTop] = useState({});
 
-  console.log(componentTop);
-
   return (
     <div className={cx('App')}>
       <Header scrollTops={componentTop} />

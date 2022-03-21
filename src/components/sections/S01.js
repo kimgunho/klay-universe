@@ -5,7 +5,7 @@ import styles from './S01.module.scss';
 import BorderLink from '../shared/BorderLink';
 
 import mouse_icon from '../../assets/images/s01/mouse_icon.svg';
-import intro_video from '../../assets/videos/KlayUniverse_Promo.mp4';
+import intro_video from '../../assets/videos/section.mp4';
 
 const cx = classNames.bind(styles);
 

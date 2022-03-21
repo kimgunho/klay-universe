@@ -1,11 +1,10 @@
-$main_color : #5CFFC0;
-$main_gradientColor : linear-gradient(90deg, rgba(49,248,171,1) 0%, rgba(57,194,238,1) 100%);
-
+$main_color: #5cffc0;
+$main_gradientColor: linear-gradient(90deg, rgba(49, 248, 171, 1) 0%, rgba(57, 194, 238, 1) 100%);
 
 @mixin limiter {
   width: 100%;
   max-width: 1440px;
-  padding:0 2rem;
+  padding: 0 2rem;
   box-sizing: border-box;
 }
 @mixin section {
@@ -13,8 +12,10 @@ $main_gradientColor : linear-gradient(90deg, rgba(49,248,171,1) 0%, rgba(57,194,
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  padding-top: 12rem;
+  box-sizing: border-box;
 }
 @mixin tablet {
   @media screen and (max-width: 1280px) {

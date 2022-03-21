@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Autoplay } from 'swiper';
+import SwiperCore, { Autoplay } from 'swiper';
 
 import styles from './S05.module.scss';
 import 'swiper/css';
@@ -29,7 +29,7 @@ import team19 from '../../assets/images/s05/team19.jpg';
 import icon from '../../assets/images/s05/slide_icon.svg';
 
 const cx = classNames.bind(styles);
-SwiperCore.use([Navigation, Autoplay]);
+SwiperCore.use([Autoplay]);
 
 const S05 = ({ setTop }) => {
   const sectionRef = useRef();
@@ -154,10 +154,6 @@ const S05 = ({ setTop }) => {
         className={cx('swiper')}
         spaceBetween={30}
         loop={true}
-        navigation={{
-          nextEl: '.nextBtn',
-          prevEl: '.prevBtn',
-        }}
         slidesPerView={2}
         breakpoints={{
           740: {

@@ -20,6 +20,8 @@
 
     > .table {
       width: 100%;
+      max-width: 1160px;
+      margin: auto;
       height: 50%;
       display: flex;
       justify-content: center;
@@ -82,6 +84,11 @@
                 color: #fff;
                 line-height: 2;
                 font-size: 1rem;
+
+                &.last {
+                  font-size: 2rem;
+                  color: #333;
+                }
 
                 &:hover {
                   color: $main_color;

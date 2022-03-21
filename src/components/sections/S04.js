@@ -59,7 +59,8 @@ const S04 = ({ setTop }) => {
     },
     {
       head: 'Q4',
-      data: ['Not Text'],
+      data: ['To be announced'],
+      last: true,
       data_right: false,
       image: false,
     },
@@ -83,12 +84,14 @@ const S04 = ({ setTop }) => {
             ))}
           </ul>
           <ul className={cx('body')}>
-            {datas.map(({ data, image, data_right }, index) => (
+            {datas.map(({ data, image, data_right, last }, index) => (
               <li key={index} className={cx({ active: index === activeIndex })}>
                 <div>
                   <ul>
                     {data.map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <li className={cx({ last: last })} key={index}>
+                        {item}
+                      </li>
                     ))}
                   </ul>
                   {image !== false ? <img src={image} alt="" /> : false}

@@ -19,33 +19,16 @@
     > p {
       font-size: 1.25rem;
       color: #fff;
-      line-height: 2;
+      line-height: 1.8;
       text-align: center;
     }
   }
 
   > .swiper {
     width: 100%;
-    max-width: 90vw;
     padding: 0 2rem;
     box-sizing: border-box;
-    margin: 4rem 0 4rem auto;
-  }
-
-  > .btn {
-    position: absolute;
-    top: 50%;
-    height: 50%;
-    width: 50%;
-    z-index: 5;
-    transform: translate(0, -50%);
-
-    &.prev {
-      left: 0;
-    }
-    &.next {
-      right: 0;
-    }
+    margin: 4rem 0;
   }
 
   > .background {

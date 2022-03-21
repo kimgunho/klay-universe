@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Autoplay } from 'swiper';
+import SwiperCore, { Autoplay } from 'swiper';
 import { RiCloseLine } from 'react-icons/ri';
 
 import styles from './S07.module.scss';
@@ -21,7 +21,7 @@ import slide09 from '../../assets/images/s07/image09.png';
 import slide10 from '../../assets/images/s07/image10.png';
 
 const cx = classNames.bind(styles);
-SwiperCore.use([Navigation, Autoplay]);
+SwiperCore.use([Autoplay]);
 
 const S07 = ({ setTop }) => {
   const sectionRef = useRef();
@@ -33,10 +33,6 @@ const S07 = ({ setTop }) => {
       s07: sectionRef.current.offsetTop,
     }));
   }, []);
-
-  useEffect(() => {
-    console.log(imageSrc);
-  }, [imageSrc]);
 
   const datas = [
     slide01,
