@@ -1,26 +1,19 @@
-import { useState } from "react";
-import classNames from "classnames/bind";
+import { useState } from 'react';
+import classNames from 'classnames/bind';
 
-import styles from "./Header.module.scss";
-import logo from "../../assets/images/shared/klayuniverse_white_logo.png";
+import styles from './Header.module.scss';
+import logo from '../../assets/images/shared/klayuniverse_white_logo.png';
 
 const cx = classNames.bind(styles);
 
 const Header = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const menus = [
-    "PROMO",
-    "UNIVERSE",
-    "ROADMAP",
-    "TEAM",
-    "PARTNERS",
-    "COMMUNITY",
-  ];
+  const menus = ['PROMO', 'UNIVERSE', 'ROADMAP', 'TEAM', 'PARTNERS', 'COMMUNITY'];
 
   return (
     <header>
-      <div className={cx("limiter")}>
+      <div className={cx('limiter')}>
         <h1>
           <img src={logo} alt="klay universe" />
         </h1>

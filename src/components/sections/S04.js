@@ -1,9 +1,9 @@
-import { useState } from "react";
-import classNames from "classnames/bind";
+import { useState } from 'react';
+import classNames from 'classnames/bind';
 
-import styles from "./S04.module.scss";
+import styles from './S04.module.scss';
 
-import Q2_image from "../../assets/images/s04/q2_image.png";
+import Q2_image from '../../assets/images/s04/q2_image.png';
 
 const cx = classNames.bind(styles);
 
@@ -12,56 +12,56 @@ const S04 = () => {
 
   const datas = [
     {
-      head: "Q2",
+      head: 'Q2',
       data: [
-        "Minecraft supported",
-        "All 5,000 UNIVERSE minted",
-        "UNIVERSE rarity & distribution data separation completed",
-        "UNIVERSE syncing to update UNIVERSE on the blockchain",
-        "Open sourcemultiplayer server released",
-        "Cross-platform playable (Xbox, PS, Switch, Phones, Tablets)",
-        "COMMUNITY build-up",
-        "Compensation plans for UNIVERSE holders",
+        'Minecraft supported',
+        'All 5,000 UNIVERSE minted',
+        'UNIVERSE rarity & distribution data separation completed',
+        'UNIVERSE syncing to update UNIVERSE on the blockchain',
+        'Open sourcemultiplayer server released',
+        'Cross-platform playable (Xbox, PS, Switch, Phones, Tablets)',
+        'COMMUNITY build-up',
+        'Compensation plans for UNIVERSE holders',
       ],
       data_right: false,
       image: Q2_image,
     },
     {
-      head: "Q3",
+      head: 'Q3',
       data: [
-        "Payments dApp for in-game $KUT transaction",
-        "Support for UNIVERSE owner created P2E systems",
-        "Support for playable 3D NFT character partnerships",
-        "Support for playing GAME on KLAY UNIVERSE",
-        "Collaboration with Famous companies and Celebrities",
-        "Famous brand UNIVERSE is open",
-        "Full support&compensation to builders and creators",
-        "Full support for creations such as animations and webtoons",
-        "$KUT token Release",
-        "$KUT token will list CEX & DEX",
+        'Payments dApp for in-game $KUT transaction',
+        'Support for UNIVERSE owner created P2E systems',
+        'Support for playable 3D NFT character partnerships',
+        'Support for playing GAME on KLAY UNIVERSE',
+        'Collaboration with Famous companies and Celebrities',
+        'Famous brand UNIVERSE is open',
+        'Full support&compensation to builders and creators',
+        'Full support for creations such as animations and webtoons',
+        '$KUT token Release',
+        '$KUT token will list CEX & DEX',
       ],
       data_right: [
-        "Based on $KUT voting system and compensation plans for $KUT token holders",
-        "AIRDROPS $KUT for UNIVERSE holders",
-        "Partnership and Collaboration with other KLAYTN projects",
+        'Based on $KUT voting system and compensation plans for $KUT token holders',
+        'AIRDROPS $KUT for UNIVERSE holders',
+        'Partnership and Collaboration with other KLAYTN projects',
       ],
       image: false,
     },
     {
-      head: "Q4",
-      data: ["Not Text"],
+      head: 'Q4',
+      data: ['Not Text'],
       data_right: false,
       image: false,
     },
   ];
 
   return (
-    <div className={cx("section")}>
-      <div className={cx("limiter")}>
+    <div className={cx('section')}>
+      <div className={cx('limiter')}>
         <h2>ROAD MAP</h2>
 
-        <div className={cx("table")}>
-          <ul className={cx("head")}>
+        <div className={cx('table')}>
+          <ul className={cx('head')}>
             {datas.map(({ head }, index) => (
               <li
                 onClick={() => setActiveIndex(index)}
@@ -72,7 +72,7 @@ const S04 = () => {
               </li>
             ))}
           </ul>
-          <ul className={cx("body")}>
+          <ul className={cx('body')}>
             {datas.map(({ data, image, data_right }, index) => (
               <li key={index} className={cx({ active: index === activeIndex })}>
                 <div>
@@ -97,7 +97,7 @@ const S04 = () => {
           </ul>
         </div>
       </div>
-      <div className={cx("background")} />
+      <div className={cx('background')} />
     </div>
   );
 };

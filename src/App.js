@@ -1,38 +1,35 @@
-import classNames from "classnames/bind";
+import classNames from 'classnames/bind';
 
-import CursorProvider from "./providers/cursorProvider";
-import Header from "./components/shared/Header";
-import Footer from "./components/shared/Footer";
-import S01 from "./components/sections/S01";
-import S02 from "./components/sections/S02";
-import S03 from "./components/sections/S03";
-import S04 from "./components/sections/S04";
-import S05 from "./components/sections/S05";
-import S06 from "./components/sections/S06";
-import S07 from "./components/sections/S07";
+import Header from './components/shared/Header';
+import Footer from './components/shared/Footer';
+import S01 from './components/sections/S01';
+import S02 from './components/sections/S02';
+import S03 from './components/sections/S03';
+import S04 from './components/sections/S04';
+import S05 from './components/sections/S05';
+import S06 from './components/sections/S06';
+import S07 from './components/sections/S07';
 
-import styles from "./App.module.scss";
+import styles from './App.module.scss';
 
 const cx = classNames.bind(styles);
 
 function App() {
   return (
-    <CursorProvider>
-      <div className={cx("App")}>
-        <div className={cx("cursor")} />
-        <Header />
-        <S01 />
-        <S02 />
-        <div className={cx("background")}>
-          <S03 />
-          <S04 />
-          <S05 />
-        </div>
-        <S06 />
-        <S07 />
-        <Footer />
+    <div className={cx('App')}>
+      <div className={cx('cursor')} />
+      <Header />
+      <S01 />
+      <S02 />
+      <div className={cx('background')}>
+        <S03 />
+        <S04 />
+        <S05 />
       </div>
-    </CursorProvider>
+      <S06 />
+      <S07 />
+      <Footer />
+    </div>
   );
 }
 

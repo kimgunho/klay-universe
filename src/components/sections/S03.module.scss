@@ -1,63 +1,62 @@
 @import '../../common.scss';
 
-.section{
-    @include section;
+.section {
+  @include section;
+  position: relative;
+
+  > .limiter {
+    @include limiter;
     position: relative;
+    z-index: 5;
 
-    >.limiter{
-        @include limiter;
-        position: relative;
-        z-index: 5;
-
-        >h2{
-            color:#fff;
-            font-size: 3rem;
-            text-align: center;
-            font-weight: 500;
-            line-height: 2;
-        }
-        >p{
-            font-size: 1.25rem;
-            color:#fff;
-            line-height: 2;
-            text-align: center;
-        }
-    
+    > h2 {
+      color: #fff;
+      font-size: 3rem;
+      text-align: center;
+      font-weight: 500;
+      line-height: 2;
     }
-
-    >.swiper{
-        width: 100%;
-        max-width: 90vw;
-        padding:0 2rem;
-        box-sizing: border-box;
-        margin:4rem 0 4rem auto;
+    > p {
+      font-size: 1.25rem;
+      color: #fff;
+      line-height: 2;
+      text-align: center;
     }
-    
-    >.btn{
-        position: absolute;
-        top:50%;
-        height: 50%;
-        width: 50%;
-        z-index: 5;
-        transform: translate(0,-50%);
+  }
 
-        &.prev{
-            left:0;
-        }
-        &.next{
-            right:0;   
-        }
-    }    
+  > .swiper {
+    width: 100%;
+    max-width: 90vw;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    margin: 4rem 0 4rem auto;
+  }
 
-    >.background{
-        background-image: url('../../assets/images/shared/grid_background.png');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: absolute;
-        left:0;
-        top:0;
-        width: 100%;
-        height: 100%;
+  > .btn {
+    position: absolute;
+    top: 50%;
+    height: 50%;
+    width: 50%;
+    z-index: 5;
+    transform: translate(0, -50%);
+
+    &.prev {
+      left: 0;
     }
+    &.next {
+      right: 0;
+    }
+  }
+
+  > .background {
+    background-image: url('../../assets/images/shared/grid_background.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

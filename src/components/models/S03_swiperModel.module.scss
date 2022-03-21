@@ -1,37 +1,37 @@
 @import '../../common.scss';
 
-.box{
-    background-color:#000;
-    padding:1rem;
-    box-sizing: border-box;
+.box {
+  background-color: #000;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
+
+  > .image {
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
     border-radius: 1rem;
 
-    >.image{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 1rem;
-
-        >img{
-            width: 80%;
-        }
+    > img {
+      width: 80%;
     }
-    >.info{
-        padding-top: 1rem;
-        width: 100%;
-        
-        >p{
-            color:#fff;
-            font-size: 1rem;
+  }
+  > .info {
+    padding-top: 1rem;
+    width: 100%;
 
-            >span{
-                color:$main_color;
-            }
-        }
+    > p {
+      color: #fff;
+      font-size: 1rem;
+
+      > span {
+        color: $main_color;
+      }
     }
+  }
 }
