@@ -84,7 +84,7 @@ const S07 = ({ setTop }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <BorderLink title={'More View'} link={''} />
+      <BorderLink title={'More View'} link={false} />
       {imageSrc === null || imageSrc === undefined ? (
         false
       ) : (

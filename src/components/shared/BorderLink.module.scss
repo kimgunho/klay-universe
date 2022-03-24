@@ -16,6 +16,22 @@
   color: #fff;
   box-sizing: border-box;
 
+  &.Join {
+    &::after {
+      content: 'Join Discord';
+    }
+  }
+  &.Buy {
+    &::after {
+      content: 'Buy on Opensea';
+    }
+  }
+  &.More {
+    &::after {
+      content: 'More View';
+    }
+  }
+
   &:hover {
     border: 0;
     &::after {

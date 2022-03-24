@@ -75,7 +75,7 @@ const S03 = ({ setTop }) => {
             spaceBetween: 20,
           },
           1280: {
-            slidesPerView: 5.5,
+            slidesPerView: 4.5,
             spaceBetween: 30,
           },
         }}
@@ -87,7 +87,7 @@ const S03 = ({ setTop }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <BorderLink title={'Buy on Opensea'} link={''} />
+      <BorderLink title={'Buy on Opensea'} link={false} />
       <div className={cx(['btn', 'prev', 'prevBtn'])} />
       <div className={cx(['btn', 'next', 'nextBtn'])} />
       <div className={cx('background')} />
