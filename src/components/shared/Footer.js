@@ -1,3 +1,6 @@
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 import classNames from 'classnames/bind';
 
 import styles from './Footer.module.scss';
@@ -10,6 +13,27 @@ import Discord from '../../assets/images/shared/Discord.svg';
 const cx = classNames.bind(styles);
 
 const Footer = () => {
+  const form = useRef();
+  const mailingRef = useRef();
+
+  const sendEmail = e => {
+    e.preventDefault();
+    const value = mailingRef.current.value;
+    /* eslint-disable */
+    const reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+    if (!reg_email.test(value)) {
+      alert('메일양식이 아닙니다.');
+      return false;
+    }
+
+    emailjs
+      .sendForm('service_c1pz9pc', 'template_dfxj2vr', form.current, 'DANFrNV4TKqMu48p7')
+      .then(alert('Thank you for join'), (mailingRef.current.value = ''), error => {
+        console.log(error.text);
+      });
+  };
+
   return (
     <footer>
       <h2>
@@ -23,8 +47,16 @@ const Footer = () => {
             <div className={cx('join')}>
               <p>Join our community</p>
               <div className={cx('box')}>
-                <input type={'text'} placeholder={'Enter your email address.'} />
-                <button>SUBMIT</button>
+                <form ref={form} onSubmit={sendEmail}>
+                  <input
+                    type={'text'}
+                    name="mailing"
+                    ref={mailingRef}
+                    placeholder={'Enter your email address.'}
+                    className={cx('mailing')}
+                  />
+                  <input className={cx('button')} type="submit" value={'SUBMIT'} />
+                </form>
               </div>
             </div>
             <div className={cx('sns')}>

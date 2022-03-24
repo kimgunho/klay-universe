@@ -103,7 +103,7 @@ const S05 = ({ setTop }) => {
       image: team12,
     },
     {
-      name: 'Peter Nguyen',
+      name: '?',
       position: 'Global manager',
       image: team13,
     },
@@ -123,7 +123,7 @@ const S05 = ({ setTop }) => {
       image: team16,
     },
     {
-      name: 'Kale Lim',
+      name: '?',
       position: 'Builder',
       image: team17,
     },

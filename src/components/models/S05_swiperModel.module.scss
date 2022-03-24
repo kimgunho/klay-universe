@@ -11,8 +11,10 @@
   border-radius: 1rem;
 
   > img {
+    position: relative;
     width: 100%;
     border-radius: 1rem;
+    clip: rect(1rem 1rem 1rem 1rem);
   }
   > .info {
     padding-top: 1rem;

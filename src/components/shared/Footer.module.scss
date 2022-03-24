@@ -44,29 +44,32 @@ footer {
               border-radius: 1rem;
               padding: 1rem;
               box-sizing: border-box;
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
               width: 100%;
               max-width: 20rem;
 
-              > input {
-                background-color: transparent;
-                font-size: 1rem;
-                color: #fff;
-                width: 100%;
+              > form {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
-                &::placeholder {
-                  color: #686868;
+                > .mailing {
+                  background-color: transparent;
                   font-size: 1rem;
-                  font-weight: 400;
+                  color: #fff;
+                  width: 100%;
+
+                  &::placeholder {
+                    color: #686868;
+                    font-size: 1rem;
+                    font-weight: 400;
+                  }
                 }
-              }
-              > button {
-                background-color: transparent;
-                color: $main_color;
-                font-size: 1rem;
-                font-weight: 700;
+                > .button {
+                  background-color: transparent;
+                  color: $main_color;
+                  font-size: 1rem;
+                  font-weight: 700;
+                }
               }
             }
           }

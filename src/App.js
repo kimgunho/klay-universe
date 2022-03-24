@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
-
+import AnimatedCursor from 'react-animated-cursor';
 import { UserModalProvider } from './context/modalContext';
 
 import Header from './components/shared/Header';
@@ -24,6 +24,7 @@ function App() {
   return (
     <UserModalProvider>
       <div className={cx('App')}>
+        <AnimatedCursor color="49, 248, 171" />
         <Header scrollTops={componentTop} />
         <S01 setTop={setComponentTop} />
         <S02 setTop={setComponentTop} />
