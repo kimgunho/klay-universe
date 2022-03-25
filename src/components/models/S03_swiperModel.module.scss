@@ -31,6 +31,10 @@
       font-size: 1rem;
       padding-bottom: 0.5rem;
 
+      @include mobile {
+        text-align: center;
+      }
+
       > span {
         color: $main_color;
       }

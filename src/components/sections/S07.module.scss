@@ -4,6 +4,14 @@
   @include section;
   position: relative;
 
+  @include mobile {
+    min-height: auto;
+  }
+
+  @include mobile {
+    min-height: auto;
+  }
+
   > .limiter {
     @include limiter;
     position: relative;
@@ -15,6 +23,10 @@
       text-align: center;
       font-weight: 500;
       line-height: 2;
+
+      @include mobile {
+        font-size: 2.5rem;
+      }
     }
     > p {
       font-size: 1.25rem;
@@ -31,6 +43,26 @@
     margin: 4rem 0;
   }
 
+  .pagination {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > span {
+        background-color: #fff;
+        opacity: 0.5;
+        margin: 0 5px;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   > .modal {
     position: fixed;
     left: 50%;
@@ -42,6 +74,10 @@
     width: 50vw;
     border-radius: 2rem;
     z-index: 10;
+
+    @include mobile {
+      width: calc(100% - 2rem);
+    }
 
     > .hidden {
       background-color: rgba(0, 0, 0, 0.75);
@@ -59,6 +95,11 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+
+      @include mobile {
+        right: 2rem;
+        top: 2rem;
+      }
     }
 
     > img {

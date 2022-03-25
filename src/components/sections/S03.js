@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
@@ -20,6 +20,7 @@ SwiperCore.use([Autoplay]);
 
 const S03 = ({ setTop }) => {
   const sectionRef = useRef();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     setTop(prev => ({
@@ -27,6 +28,15 @@ const S03 = ({ setTop }) => {
       s03: sectionRef.current.offsetTop,
     }));
   }, []);
+
+  useEffect(() => {
+    changeWindowWidth();
+    window.addEventListener('resize', changeWindowWidth);
+  }, []);
+
+  const changeWindowWidth = () => {
+    setWindowWidth(window.innerWidth);
+  };
 
   const datas = [
     {
@@ -64,32 +74,41 @@ const S03 = ({ setTop }) => {
           limitless world that can be built into anything you can imagine.
         </p>
       </div>
-      <Swiper
-        className={cx('swiper')}
-        spaceBetween={30}
-        loop={true}
-        slidesPerView={1.5}
-        breakpoints={{
-          740: {
-            slidesPerView: 3.5,
-            spaceBetween: 20,
-          },
-          1280: {
-            slidesPerView: 4.5,
-            spaceBetween: 30,
-          },
-        }}
-        // autoplay={{ delay: 2500 }}
-      >
-        {datas.map(({ color, image }, index) => (
-          <SwiperSlide className={cx('slide')} key={index}>
-            <Model color={color} image={image} number={index} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {windowWidth > 940 ? (
+        <Swiper
+          className={cx('swiper')}
+          spaceBetween={30}
+          loop={true}
+          slidesPerView={1.5}
+          breakpoints={{
+            740: {
+              slidesPerView: 3.5,
+              spaceBetween: 20,
+            },
+            1280: {
+              slidesPerView: 4.5,
+              spaceBetween: 30,
+            },
+          }}
+          autoplay={{ delay: 2500 }}
+        >
+          {datas.map(({ color, image }, index) => (
+            <SwiperSlide className={cx('slide')} key={index}>
+              <Model color={color} image={image} number={index} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <ul className={cx('flex')}>
+          {datas.map(({ color, image }, index) => (
+            <SwiperSlide className={cx('slide')} key={index}>
+              <Model color={color} image={image} number={index} />
+            </SwiperSlide>
+          ))}
+        </ul>
+      )}
+
       <BorderLink title={'Buy on Opensea'} link={false} />
-      <div className={cx(['btn', 'prev', 'prevBtn'])} />
-      <div className={cx(['btn', 'next', 'nextBtn'])} />
       <div className={cx('background')} />
     </div>
   );

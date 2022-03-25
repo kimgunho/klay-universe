@@ -186,9 +186,6 @@ const S05 = ({ setTop }) => {
           </div>
         ))}
       </div>
-
-      <div className={cx(['btn', 'prev', 'prevBtn'])} />
-      <div className={cx(['btn', 'next', 'nextBtn'])} />
       <div className={cx('background')} />
     </div>
   );

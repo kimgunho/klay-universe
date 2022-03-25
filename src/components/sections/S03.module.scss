@@ -4,6 +4,10 @@
   @include section;
   position: relative;
 
+  @include mobile {
+    min-height: auto;
+  }
+
   > .limiter {
     @include limiter;
     position: relative;
@@ -15,6 +19,10 @@
       text-align: center;
       font-weight: 600;
       line-height: 2;
+
+      @include mobile {
+        font-size: 2.5rem;
+      }
     }
     > p {
       font-size: 1.25rem;
@@ -29,6 +37,19 @@
     padding: 0 2rem;
     box-sizing: border-box;
     margin: 4rem 0;
+  }
+
+  > .flex {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+    box-sizing: border-box;
+
+    > .slide {
+      width: 49%;
+    }
   }
 
   > .background {

@@ -20,6 +20,10 @@
   max-height: 20rem;
   display: none;
 
+  @include mobile {
+    width: calc(100% - 2rem);
+  }
+
   &.active {
     display: flex;
   }

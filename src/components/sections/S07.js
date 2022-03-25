@@ -1,11 +1,12 @@
 import { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay } from 'swiper';
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import { RiCloseLine } from 'react-icons/ri';
 
 import styles from './S07.module.scss';
 import 'swiper/css';
+import 'swiper/scss/pagination';
 import Model from '../models/S07_swiperModel';
 import BorderLink from '../shared/BorderLink';
 
@@ -62,10 +63,12 @@ const S07 = ({ setTop }) => {
         </p>
       </div>
       <Swiper
+        modules={[Pagination]}
+        pagination={{ el: '.paginationBox', clickable: true, bulletActiveClass: cx('active') }}
         className={cx('swiper')}
         spaceBetween={30}
         loop={true}
-        slidesPerView={1.5}
+        slidesPerView={1}
         breakpoints={{
           740: {
             slidesPerView: 2.5,
@@ -84,6 +87,7 @@ const S07 = ({ setTop }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className={cx(['pagination', 'paginationBox'])} />
       <BorderLink title={'More View'} link={false} />
       {imageSrc === null || imageSrc === undefined ? (
         false
