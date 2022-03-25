@@ -3,7 +3,7 @@
 .section {
   @include section;
   position: relative;
-  background-color: #000;
+  background-color: #101010;
 
   > .limiter {
     @include limiter;

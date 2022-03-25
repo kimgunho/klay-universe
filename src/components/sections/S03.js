@@ -79,7 +79,7 @@ const S03 = ({ setTop }) => {
             spaceBetween: 30,
           },
         }}
-        autoplay={{ delay: 2500 }}
+        // autoplay={{ delay: 2500 }}
       >
         {datas.map(({ color, image }, index) => (
           <SwiperSlide className={cx('slide')} key={index}>
