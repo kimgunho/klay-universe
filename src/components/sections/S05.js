@@ -25,7 +25,7 @@ import team15 from '../../assets/images/s05/team15.jpg';
 import team16 from '../../assets/images/s05/team16.jpg';
 import team17 from '../../assets/images/s05/team17.jpg';
 import team18 from '../../assets/images/s05/team18.jpg';
-import team19 from '../../assets/images/s05/team19.jpg';
+// import team19 from '../../assets/images/s05/team19.jpg';
 import icon from '../../assets/images/s05/slide_icon.svg';
 
 const cx = classNames.bind(styles);
@@ -118,7 +118,7 @@ const S05 = ({ setTop }) => {
       image: team15,
     },
     {
-      name: 'TBA',
+      name: '?',
       position: 'Builder',
       image: team16,
     },
@@ -132,11 +132,11 @@ const S05 = ({ setTop }) => {
       position: 'Creator',
       image: team18,
     },
-    {
-      name: 'James. Choi',
-      position: 'CreatorB',
-      image: team19,
-    },
+    // {
+    //   name: 'James. Choi',
+    //   position: 'CreatorB',
+    //   image: team19,
+    // },
   ];
 
   return (
