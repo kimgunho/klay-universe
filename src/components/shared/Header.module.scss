@@ -183,15 +183,11 @@ aside{
             width: 0;
             height: 0;
             position: absolute;
-            right: -25px;
+            right: -20px;
             top: 50%;
             transform: translate(0, -50%);
             border: 0.7rem solid transparent;
             border-left: 1rem solid #fff;
-  
-            @include mobile {
-              right: -20px;
-            }
           }          
         }
 
