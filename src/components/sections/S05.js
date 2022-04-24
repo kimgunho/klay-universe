@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
+import { useTranslation } from 'react-i18next';
 
 import styles from './S05.module.scss';
 import 'swiper/css';
@@ -32,6 +33,7 @@ const cx = classNames.bind(styles);
 SwiperCore.use([Autoplay]);
 
 const S05 = ({ setTop }) => {
+  const { t } = useTranslation();
   const sectionRef = useRef();
 
   useEffect(() => {
@@ -144,9 +146,11 @@ const S05 = ({ setTop }) => {
       <div className={cx('limiter')}>
         <h2>TEAM</h2>
         <p>
-          The Klay Universe team is more passionate than anyone else,
-          <br />
-          It consists of talented team members full of affection.
+          {t('s05.desc')
+            .split('\n')
+            .map((_, index) => (
+              <span key={index}>{_}</span>
+            ))}
         </p>
       </div>
 

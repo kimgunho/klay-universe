@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useState } from 'react';
 import classNames from 'classnames/bind';
+import { useTranslation } from 'react-i18next';
 
 import styles from './S04.module.scss';
 
@@ -9,6 +10,7 @@ import Q2_image from '../../assets/images/s04/q2_image.png';
 const cx = classNames.bind(styles);
 
 const S04 = ({ setTop }) => {
+  const { t } = useTranslation();
   const sectionRef = useRef();
 
   useEffect(() => {
@@ -24,14 +26,14 @@ const S04 = ({ setTop }) => {
     {
       head: 'Q2',
       data: [
-        'Minecraft supported',
-        'All 5,000 UNIVERSE minted',
-        'UNIVERSE rarity & distribution data separation completed',
-        'UNIVERSE syncing to update UNIVERSE on the blockchain',
-        'Open sourcemultiplayer server released',
-        'Cross-platform playable (Xbox, PS, Switch, Phones, Tablets)',
-        'COMMUNITY build-up',
-        'Compensation plans for UNIVERSE holders',
+        t('s04.q2_01'),
+        t('s04.q2_02'),
+        t('s04.q2_03'),
+        t('s04.q2_04'),
+        t('s04.q2_05'),
+        t('s04.q2_06'),
+        t('s04.q2_07'),
+        t('s04.q2_08'),
       ],
       data_right: false,
       image: Q2_image,
@@ -39,22 +41,18 @@ const S04 = ({ setTop }) => {
     {
       head: 'Q3',
       data: [
-        'Payments dApp for in-game $KUT transaction',
-        'Support for UNIVERSE owner created P2E systems',
-        'Support for playable 3D NFT character partnerships',
-        'Support for playing GAME on KLAY UNIVERSE',
-        'Collaboration with Famous companies and Celebrities',
-        'Famous brand UNIVERSE is open',
-        'Full support&compensation to builders and creators',
-        'Full support for creations such as animations and webtoons',
-        '$KUT token Release',
-        '$KUT token will list CEX & DEX',
+        t('s04.q3_01'),
+        t('s04.q3_02'),
+        t('s04.q3_03'),
+        t('s04.q3_04'),
+        t('s04.q3_05'),
+        t('s04.q3_06'),
+        t('s04.q3_07'),
+        t('s04.q3_08'),
+        t('s04.q3_09'),
+        t('s04.q3_10'),
       ],
-      data_right: [
-        'Based on $KUT voting system and compensation plans for $KUT token holders',
-        'AIRDROPS $KUT for UNIVERSE holders',
-        'Partnership and Collaboration with other KLAYTN projects',
-      ],
+      data_right: [t('s04.q3_11'), t('s04.q3_12'), t('s04.q3_13')],
       image: false,
     },
     {

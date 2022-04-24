@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
+import { useTranslation } from 'react-i18next';
 
 import styles from './S03.module.scss';
 import 'swiper/css';
@@ -19,6 +20,7 @@ const cx = classNames.bind(styles);
 SwiperCore.use([Autoplay]);
 
 const S03 = ({ setTop }) => {
+  const { t } = useTranslation();
   const sectionRef = useRef();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -70,8 +72,11 @@ const S03 = ({ setTop }) => {
       <div className={cx('limiter')}>
         <h2>UNIVERSE NFT</h2>
         <p>
-          Each KLAY UNIVERSE NFT is an explorable, <br />
-          limitless world that can be built into anything you can imagine.
+          {t('s03.desc')
+            .split('\n')
+            .map((_, index) => (
+              <span key={index}>{_}</span>
+            ))}
         </p>
       </div>
       {windowWidth > 940 ? (
