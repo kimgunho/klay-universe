@@ -2,6 +2,7 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import AnimatedCursor from 'react-animated-cursor';
 import { UserModalProvider } from './context/modalContext';
+import './lang/i18n';
 
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';

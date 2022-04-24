@@ -55,7 +55,7 @@ const S07 = ({ setTop }) => {
   return (
     <div className={cx('section')} ref={sectionRef}>
       <div className={cx('limiter')}>
-        <h2>COMMUNITY</h2>
+        <h2>GALLERY</h2>
         <p>
           Create universe &amp; Enjoy omniverse
           <br />

@@ -24,7 +24,7 @@ const S06 = ({ setTop }) => {
         </p>
         <ul className={cx('list')}>
           <li>
-            <div>LOGO</div>
+            <div></div>
           </li>
           <li>
             <div></div>

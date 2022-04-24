@@ -26,7 +26,7 @@ import team16 from '../../assets/images/s05/team16.jpg';
 import team17 from '../../assets/images/s05/team17.jpg';
 import team18 from '../../assets/images/s05/team18.jpg';
 import team19 from '../../assets/images/s05/team19.jpg';
-import icon from '../../assets/images/s05/slide_icon.svg';
+// import icon from '../../assets/images/s05/slide_icon.svg';
 
 const cx = classNames.bind(styles);
 SwiperCore.use([Autoplay]);
@@ -128,7 +128,7 @@ const S05 = ({ setTop }) => {
       image: team17,
     },
     {
-      name: 'Rowan. Lee',
+      name: '?',
       position: 'Creator',
       image: team18,
     },
@@ -178,14 +178,14 @@ const S05 = ({ setTop }) => {
         ))}
       </Swiper>
 
-      <div className={cx('autoSwiper')}>
+      {/* <div className={cx('autoSwiper')}>
         {Array.from(Array(20)).map((_, index) => (
           <div key={index} className={cx('slide')}>
             <p>Indulge in what you imagine </p>
             <img src={icon} alt="" />
           </div>
         ))}
-      </div>
+      </div> */}
       <div className={cx('background')} />
     </div>
   );
