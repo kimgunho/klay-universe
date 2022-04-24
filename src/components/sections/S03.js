@@ -9,12 +9,12 @@ import 'swiper/css';
 import Model from '../../components/models/S03_swiperModel';
 import BorderLink from '../shared/BorderLink';
 
-import slide01 from '../../assets/images/s03/slide01.png';
-import slide02 from '../../assets/images/s03/slide02.png';
-import slide03 from '../../assets/images/s03/slide03.png';
-import slide04 from '../../assets/images/s03/slide04.png';
-import slide05 from '../../assets/images/s03/slide05.png';
-import slide06 from '../../assets/images/s03/slide06.png';
+import slide01 from '../../assets/videos/s03_01.mp4';
+import slide02 from '../../assets/videos/s03_02.mp4';
+import slide03 from '../../assets/videos/s03_03.mp4';
+import slide04 from '../../assets/videos/s03_04.mp4';
+import slide05 from '../../assets/videos/s03_05.mp4';
+import slide06 from '../../assets/videos/s03_06.mp4';
 
 const cx = classNames.bind(styles);
 SwiperCore.use([Autoplay]);
@@ -42,28 +42,22 @@ const S03 = ({ setTop }) => {
 
   const datas = [
     {
-      color: '#BA9DAA',
-      image: slide01,
+      video: slide01,
     },
     {
-      color: '#9FBBA3',
-      image: slide02,
+      video: slide02,
     },
     {
-      color: '#AB9BBA',
-      image: slide03,
+      video: slide03,
     },
     {
-      color: '#B9AB9E',
-      image: slide04,
+      video: slide04,
     },
     {
-      color: '#A6BA9E',
-      image: slide05,
+      video: slide05,
     },
     {
-      color: '#A39EBA',
-      image: slide06,
+      video: slide06,
     },
   ];
 
@@ -97,17 +91,17 @@ const S03 = ({ setTop }) => {
           }}
           autoplay={{ delay: 2500 }}
         >
-          {datas.map(({ color, image }, index) => (
+          {datas.map(({ video }, index) => (
             <SwiperSlide className={cx('slide')} key={index}>
-              <Model color={color} image={image} number={index} />
+              <Model video={video} number={index} />
             </SwiperSlide>
           ))}
         </Swiper>
       ) : (
         <ul className={cx('flex')}>
-          {datas.map(({ color, image }, index) => (
+          {datas.map(({ video }, index) => (
             <SwiperSlide className={cx('slide')} key={index}>
-              <Model color={color} image={image} number={index} />
+              <Model video={video} number={index} />
             </SwiperSlide>
           ))}
         </ul>
