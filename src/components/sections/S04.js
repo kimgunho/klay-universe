@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './S04.module.scss';
 
-import Q2_image from '../../assets/images/s04/q2_image.png';
+import Q2_video from '../../assets/videos/s04_video.mp4';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +36,7 @@ const S04 = ({ setTop }) => {
         t('s04.q2_08'),
       ],
       data_right: false,
-      image: Q2_image,
+      video: Q2_video,
     },
     {
       head: 'Q3',
@@ -53,14 +53,14 @@ const S04 = ({ setTop }) => {
         t('s04.q3_10'),
       ],
       data_right: [t('s04.q3_11'), t('s04.q3_12'), t('s04.q3_13')],
-      image: false,
+      video: false,
     },
     {
       head: 'Q4',
       data: ['To be announced'],
       last: true,
       data_right: false,
-      image: false,
+      video: false,
     },
   ];
 
@@ -82,7 +82,7 @@ const S04 = ({ setTop }) => {
             ))}
           </ul>
           <ul className={cx('body')}>
-            {datas.map(({ data, image, data_right, last }, index) => (
+            {datas.map(({ data, video, data_right, last }, index) => (
               <li key={index} className={cx({ active: index === activeIndex })}>
                 <div>
                   <ul>
@@ -92,7 +92,13 @@ const S04 = ({ setTop }) => {
                       </li>
                     ))}
                   </ul>
-                  {image !== false ? <img src={image} alt="" /> : false}
+                  {video !== false ? (
+                    <video autoPlay muted loop className={cx('video')}>
+                      <source src={video} type="video/mp4" />
+                    </video>
+                  ) : (
+                    false
+                  )}
                   {data_right !== false ? (
                     <ul>
                       {data_right.map((item, index) => (

@@ -83,7 +83,11 @@ const Header = ({ scrollTops }) => {
             </a>
           </li>
           <li className={cx('book')}>
-            <a onClick={handlePageLocation} href="" target={'_blank'} rel="noreferrer">
+            <a
+              href="https://klayuniverse.gitbook.io/whitepaper/welcome-to-klay-universe/create-your-own-universe"
+              target={'_blank'}
+              rel="noreferrer"
+            >
               <p>Connect GitBook</p>
               <div className={cx('background')}>
                 <div className={cx('icon')} />
