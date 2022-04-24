@@ -40,6 +40,12 @@ header {
     >.nav{
       width: calc(100% - 220px);
 
+      @include mobile{
+        position: absolute;
+        top:1rem;
+        right:0;
+      }
+
       >.tnb{
         display: flex;
         justify-content: flex-end;
@@ -104,6 +110,11 @@ aside{
   right: 10%;
   top: 140px;
   z-index: 50;
+
+  @include mobile{
+    right:2rem;
+    top:100px;
+  }
 
   >ul{
     >li{
