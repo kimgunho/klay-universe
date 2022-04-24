@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
-import { UseUserModal } from '../../context/modalContext';
 
 import styles from './S01.module.scss';
 import BorderLink from '../shared/BorderLink';
@@ -11,7 +10,6 @@ import intro_video from '../../assets/videos/section.mp4';
 const cx = classNames.bind(styles);
 
 const S01 = ({ setTop }) => {
-  const { setModalActive } = UseUserModal();
   const sectionRef = useRef();
 
   useEffect(() => {
@@ -21,21 +19,8 @@ const S01 = ({ setTop }) => {
     }));
   }, []);
 
-  const onClick = event => {
-    event.preventDefault();
-    setModalActive(true);
-  };
-
   return (
     <div className={cx('section')} ref={sectionRef}>
-      <div className={cx('wallet')}>
-        <a href="" onClick={onClick} target={'_blank'} rel="noreferrer">
-          <p>Connect Wallet</p>
-          <div className={cx('background')}>
-            <div className={cx('icon')} />
-          </div>
-        </a>
-      </div>
       <div className={cx('dimmed')} />
       <video autoPlay muted loop className={cx('video')}>
         <source src={intro_video} type="video/mp4" />
