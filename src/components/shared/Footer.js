@@ -9,6 +9,7 @@ import OpeaSea from '../../assets/images/shared/OpeaSea.svg';
 import Twitter from '../../assets/images/shared/Twitter.svg';
 import GitBook from '../../assets/images/shared/gitbook.svg';
 import Discord from '../../assets/images/shared/Discord.svg';
+import Youtube from '../../assets/images/shared/youtube.svg';
 
 const cx = classNames.bind(styles);
 
@@ -61,7 +62,7 @@ const Footer = () => {
             </div>
             <div className={cx('sns')}>
               <a href="mailto:info@klayuniverse.com">info@klayuniverse.com</a>
-              <p>
+              {/* <p>
                 <span>
                   <a href="">Privacy Policy</a>
                 </span>
@@ -69,8 +70,16 @@ const Footer = () => {
                 <span>
                   <a href="">Terms of Service</a>
                 </span>
-              </p>
+              </p> */}
               <ul>
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UCclk13SWkQ_b_kIPaDJWvxw"
+                    target={'_blank'}
+                  >
+                    <img src={Youtube} alt="" />
+                  </a>
+                </li>
                 <li>
                   <a href="" target={'_blank'}>
                     <img src={OpeaSea} alt="" />

@@ -88,7 +88,7 @@ const Header = ({ scrollTops }) => {
               target={'_blank'}
               rel="noreferrer"
             >
-              <p>Connect GitBook</p>
+              <p>Connect Whitepaper</p>
               <div className={cx('background')}>
                 <div className={cx('icon')} />
               </div>
@@ -96,7 +96,7 @@ const Header = ({ scrollTops }) => {
           </li>
           <li className={cx('search')}>
             <a onClick={handlePageLocation} href="" target={'_blank'} rel="noreferrer">
-              <p>Search</p>
+              <p>UNIVERSE Search</p>
               <div className={cx('background')}>
                 <div className={cx('icon')} />
               </div>
